@@ -1,0 +1,51 @@
+
+{%extends 'home.html'%}
+{% block content1%}
+<div class="btn-group">
+  <a href="{{url_for('home')}}" class="btn btn-primary focus">HOME</a>
+</div>
+{%endblock%}
+{%block content%}
+<title>display page</title>
+<head>
+<style>
+body {
+  /* Set "my-sec-counter" to 0 */
+  counter-reset: my-sec-counter;
+}
+
+h5::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter;
+  content: "" counter(my-sec-counter) " ";
+}
+</style>
+</head>
+
+<div class="table-responsive">
+  <table class="table">
+    <table class="table caption-top">
+  <caption><b>Details</b></caption>
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Conatact Number</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in td %}
+    <tr>
+      <th scope="row"><h5></h5></th>
+      <th>{{i}}</th>
+      <th>{{td[i]}}</th>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+  </table>
+</div>
+
+
+
+{%endblock%}

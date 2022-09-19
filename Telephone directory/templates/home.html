@@ -1,0 +1,64 @@
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+  <style>
+
+    body {
+        background-image: url('https://cutewallpaper.org/21/webpage-wallpapers/Best-35+-Downloadable-Website-Backgrounds-on-HipWallpaper-.jpg')
+    }
+    </style>
+
+<center>
+
+
+  <div class="p-3 mb-2 bg-secondary text-white"><h1 style="color:#FFFFFF"><b>Telephone Directory</b></h1></div>
+
+
+ <div class="btn-group" >
+   {% block content1%}
+
+   {%endblock%}
+   <a href="{{url_for('add')}}" class="btn btn-primary focus">ADD</a>
+   <a href="{{url_for('display')}}" class="btn btn-primary ">DISPLAY</a>
+   <a href="{{url_for('search')}}" class="btn btn-primary">SEARCH</a>
+ </div>
+<br>
+
+
+
+</center>
+
+{% block content%}
+<title>home page</title>
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+</head>
+
+<body>
+
+   <div class="centered"><h1 style="color:#C0C0C0;"><marquee>The Telephone gaves us the happiness of being together yet safely apart.</marquee></h1></div>
+<!-- <div class="right"><img src="C:\Users\ceh\Desktop\atom\Telephone directory\templates\ph_book.gif" alt="Telegraphy" style="width:50px;height:50px;">
+
+</div> -->
+</body>
+
+
+<br>
+
+{%endblock%}

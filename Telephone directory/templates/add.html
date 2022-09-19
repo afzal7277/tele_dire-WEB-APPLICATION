@@ -1,0 +1,98 @@
+
+{%extends 'home.html'%}
+{% block content1%}
+<div class="btn-group">
+  <a href="{{url_for('home')}}" class="btn btn-primary focus">HOME</a>
+</div>
+{%endblock%}
+{%block content%}
+
+<title>add page</title>
+
+<form action="{{url_for('add')}}" method="post">
+  <center>
+
+    <head>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <h1>
+      <b>Add Contact Details</b></h1>
+    </head>
+    <style>
+    input[type=text] {
+      width: 100%;
+      padding: 7px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 3px solid #555;
+    }
+    </style>
+    <br>
+    <!-- <br>
+      Full Name :  <input type="text" name="fname">
+
+    <br>
+    Contact No. : <input type="text" name="number">
+
+    <br>
+    <br>
+    <input type="submit" value="Submit"> -->
+
+
+    <br>
+
+    <div class="mb-3 row">
+    <label for="fullname" class="col-sm-2 col-form-label"><h3>Full Name</h3></label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="fname" >
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="number" class="col-sm-2 col-form-label"><h3>Contact No.</h3></label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" name="number" id="edit-title-input">
+    </div>
+  </div>
+    <button type="submit" class="btn btn-primary focus"  button id ="edit-submit" disabled onclick="myFunction()" >Submit</button>
+    <!-- <script>
+   $("#submitForm").click(function() {
+      alert("New Contact Added Successfully");
+   });
+</script> -->
+
+
+<script>
+function myFunction() {
+  alert("Contact Successfully Added");
+}
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $('#edit-title-input').on('keyup', stateHandle);
+
+  function stateHandle(e) {
+    var text = $('#edit-title-input').val();
+    var regex = text.replace(/ /g,'');
+    if (regex.length == 0) {
+      $('#edit-submit').attr('disabled', true);
+    } else {
+      $('#edit-submit').removeAttr('disabled');
+    }
+  }
+
+</script>
+
+  </center>
+
+</form>
+
+{%endblock%}
